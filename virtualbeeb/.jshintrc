@@ -1,0 +1,12 @@
+{
+  "strict": true,
+  "undef": true,
+  "browser": true,
+  "node": true,
+  "globals": {
+    "ga": false,
+    "define": false
+  },
+  "esversion": 8,
+  "eqeqeq": true
+}
