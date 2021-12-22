@@ -12,10 +12,9 @@ var console = {
 
 ///////////////////////////////////////////////////
 // Gook to simulate enough of requirejs to get Video to load
-/* global load */
-load('./lib/require.js');
+load('./lib/require.js'); // jshint ignore:line
 requirejs.load = function (context, moduleName, url) {
-    load(url);
+    load(url); // jshint ignore:line
     context.completeLoad(moduleName);
 };
 requirejs.config({
@@ -25,6 +24,12 @@ requirejs.config({
         'underscore': 'lib/underscore-min'
     }
 });
+
+function setTimeout(fn, delay) {
+    fn();
+}
+
+///////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////
 /* globals requirejs */
