@@ -1,8 +1,8 @@
 "use strict";
-import {app, BrowserWindow, dialog, Menu} from 'electron';
-import * as fs from 'fs';
-import * as path from 'path';
-import {ArgumentParser} from 'argparse';
+const {app, dialog, Menu, BrowserWindow} = require('electron');
+const fs = require('fs');
+const path = require('path');
+const {ArgumentParser} = require('argparse');
 
 const isMac = process.platform === 'darwin';
 
@@ -18,10 +18,10 @@ const parser = new ArgumentParser({
     addHelp: true,
     description: 'Emulate a Beeb'
 });
-parser.add_argument(["--noboot"], {action: 'storeTrue', help: "don't autoboot if given a disc image"});
-parser.add_argument(["disc1"], {nargs: '?', help: "image to load in drive 0"});
-parser.add_argument(["disc2"], {nargs: '?', help: "image to load in drive 1"});
-const args = parser.parse_args(getArguments());
+parser.addArgument(["--noboot"], {action: 'storeTrue', help: "don't autoboot if given a disc image"});
+parser.addArgument(["disc1"], {nargs: '?', help: "image to load in drive 0"});
+parser.addArgument(["disc2"], {nargs: '?', help: "image to load in drive 1"});
+const args = parser.parseArgs(getArguments());
 
 
 function getFileParam(filename) {
