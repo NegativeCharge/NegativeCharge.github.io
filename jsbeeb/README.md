@@ -17,13 +17,9 @@ this case), press shift-F12 (which is shift-Break on the BBC).
 Getting set up to run locally
 -----------------------------
 
-Fire up a local webserver and load it up.  I use `python` for this as it has a built-in webserver. So:
+jsbeeb needs to be built with webpack. If you're developing locally you'll need a recent `node` and then run `npm install` to install needed packages.
 
-    $ cd jsbeeb
-    $ python -mSimpleHTTPServer
-    Serving HTTP on 0.0.0.0 port 8000 ...
-
-Then visit http://localhost:8000/ and off you go.
+You can then run `npm start` to get a local webserver which will autoreload on changes in the code - visit http://localhost:8080/ and off you go.
 
 URL parameters
 --------------
@@ -105,7 +101,7 @@ Please note it can take a while to run the whole test suite.
 Thanks
 ------
 
-jsbeeb was heavily based on Sarah Walker's C [B-Em emulator](http://b-em.bbcmicro.com/) -- thanks to her for her hard work and for open sourcing her code. 
+jsbeeb was heavily based on Sarah Walker's C [B-Em emulator](https://github.com/stardot/b-em) -- thanks to her for her hard work and for open sourcing her code. B-em is now being maintained by a group of enthusiasts - thanks to them too! 
 
 Huge thanks to Richard Talbot-Watkins for his advice and help along the way in fathoming out the instruction timings, interrupt fun,
 video code rewrite and for being such a good pal all these many years!
