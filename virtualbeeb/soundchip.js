@@ -72,6 +72,8 @@ define(['./utils'], function (utils) {
                 counter[channel] -= sampleDecrement;
                 if (counter[channel] < 0) {
                     counter[channel] += reg;
+                    if (counter[channel] < 0)
+                       counter[channel] %= reg;
                     outputBit[channel] = !outputBit[channel];
                 }
                 out[i + offset] += (outputBit[channel] * vol);
@@ -117,6 +119,8 @@ define(['./utils'], function (utils) {
                 counter[channel] -= sampleDecrement;
                 if (counter[channel] < 0) {
                     counter[channel] += add;
+                    if (counter[channel] < 0)
+                       counter[channel] %= add;
                     outputBit[channel] = !outputBit[channel];
                     if (outputBit[channel]) shiftLfsr();
                 }
