@@ -32998,7 +32998,7 @@ function SoundChip(sampleRate) {
             if (counter[channel] < 0) {
                 counter[channel] += reg;
                 if (counter[channel] < 0)
-                    counter[channel] %= reg;
+                    counter[channel] = Math.min(reg,0);
                 outputBit[channel] = !outputBit[channel];
             }
             out[i + offset] += (outputBit[channel] * vol);
@@ -33045,7 +33045,7 @@ function SoundChip(sampleRate) {
             if (counter[channel] < 0) {
                 counter[channel] += add;
                 if (counter[channel] < 0)
-                    counter[channel] %= add;
+                    counter[channel] = Math.min(add,0);
                 outputBit[channel] = !outputBit[channel];
                 if (outputBit[channel]) shiftLfsr();
             }
